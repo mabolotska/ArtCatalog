@@ -9,23 +9,39 @@
 /* Begin PBXBuildFile section */
 		D0496DBF2B7A36810000622F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0496DBE2B7A36810000622F /* AppDelegate.swift */; };
 		D0496DC12B7A36810000622F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0496DC02B7A36810000622F /* SceneDelegate.swift */; };
-		D0496DC32B7A36810000622F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0496DC22B7A36810000622F /* ViewController.swift */; };
+		D0496DC32B7A36810000622F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0496DC22B7A36810000622F /* MainViewController.swift */; };
 		D0496DC62B7A36810000622F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0496DC42B7A36810000622F /* Main.storyboard */; };
 		D0496DC82B7A36830000622F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0496DC72B7A36830000622F /* Assets.xcassets */; };
 		D0496DCB2B7A36830000622F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0496DC92B7A36830000622F /* LaunchScreen.storyboard */; };
 		D0496DD32B7A39B20000622F /* artists.json in Resources */ = {isa = PBXBuildFile; fileRef = D0496DD22B7A39B20000622F /* artists.json */; };
+		D0496DD62B7A418D0000622F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D0496DD52B7A418D0000622F /* SnapKit */; };
+		D0496DD82B7A418D0000622F /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D0496DD72B7A418D0000622F /* SnapKit-Dynamic */; };
+		D0496DDC2B7AAD2D0000622F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0496DDB2B7AAD2D0000622F /* Model.swift */; };
+		D0496DDF2B7AB8D10000622F /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0496DDE2B7AB8D10000622F /* MainCell.swift */; };
+		D0496DE32B7B597D0000622F /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0496DE22B7B597D0000622F /* DetailVC.swift */; };
+		D0496DE62B7B635F0000622F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0496DE52B7B635F0000622F /* MainViewModel.swift */; };
+		D0496DE82B7B64460000622F /* MainCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0496DE72B7B64460000622F /* MainCellViewModel.swift */; };
+		D0496DEB2B7B65160000622F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0496DEA2B7B65160000622F /* Observable.swift */; };
+		D0496DED2B7B85F60000622F /* DetailsMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0496DEC2B7B85F60000622F /* DetailsMovieViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D0496DBB2B7A36810000622F /* ArtCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0496DBE2B7A36810000622F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0496DC02B7A36810000622F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D0496DC22B7A36810000622F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D0496DC22B7A36810000622F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D0496DC52B7A36810000622F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0496DC72B7A36830000622F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0496DCA2B7A36830000622F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0496DCC2B7A36830000622F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0496DD22B7A39B20000622F /* artists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = artists.json; sourceTree = "<group>"; };
+		D0496DDB2B7AAD2D0000622F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D0496DDE2B7AB8D10000622F /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		D0496DE22B7B597D0000622F /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		D0496DE52B7B635F0000622F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		D0496DE72B7B64460000622F /* MainCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCellViewModel.swift; sourceTree = "<group>"; };
+		D0496DEA2B7B65160000622F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		D0496DEC2B7B85F60000622F /* DetailsMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsMovieViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0496DD62B7A418D0000622F /* SnapKit in Frameworks */,
+				D0496DD82B7A418D0000622F /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,9 +76,13 @@
 		D0496DBD2B7A36810000622F /* ArtCatalog */ = {
 			isa = PBXGroup;
 			children = (
+				D0496DE42B7B5AE60000622F /* ViewModels */,
+				D0496DDD2B7AB8AE0000622F /* Views */,
+				D0496DDA2B7AAD1A0000622F /* Model */,
+				D0496DE92B7B64F00000622F /* Classes */,
+				D0496DD92B7AAB120000622F /* Controllers */,
 				D0496DBE2B7A36810000622F /* AppDelegate.swift */,
 				D0496DC02B7A36810000622F /* SceneDelegate.swift */,
-				D0496DC22B7A36810000622F /* ViewController.swift */,
 				D0496DC42B7A36810000622F /* Main.storyboard */,
 				D0496DC72B7A36830000622F /* Assets.xcassets */,
 				D0496DC92B7A36830000622F /* LaunchScreen.storyboard */,
@@ -68,6 +90,49 @@
 				D0496DD22B7A39B20000622F /* artists.json */,
 			);
 			path = ArtCatalog;
+			sourceTree = "<group>";
+		};
+		D0496DD92B7AAB120000622F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0496DC22B7A36810000622F /* MainViewController.swift */,
+				D0496DE22B7B597D0000622F /* DetailVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D0496DDA2B7AAD1A0000622F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0496DDB2B7AAD2D0000622F /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0496DDD2B7AB8AE0000622F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0496DDE2B7AB8D10000622F /* MainCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D0496DE42B7B5AE60000622F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D0496DE52B7B635F0000622F /* MainViewModel.swift */,
+				D0496DE72B7B64460000622F /* MainCellViewModel.swift */,
+				D0496DEC2B7B85F60000622F /* DetailsMovieViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D0496DE92B7B64F00000622F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D0496DEA2B7B65160000622F /* Observable.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +151,10 @@
 			dependencies = (
 			);
 			name = ArtCatalog;
+			packageProductDependencies = (
+				D0496DD52B7A418D0000622F /* SnapKit */,
+				D0496DD72B7A418D0000622F /* SnapKit-Dynamic */,
+			);
 			productName = ArtCatalog;
 			productReference = D0496DBB2B7A36810000622F /* ArtCatalog.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +183,9 @@
 				Base,
 			);
 			mainGroup = D0496DB22B7A36810000622F;
+			packageReferences = (
+				D0496DD42B7A418D0000622F /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = D0496DBC2B7A36810000622F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -142,9 +214,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0496DC32B7A36810000622F /* ViewController.swift in Sources */,
+				D0496DC32B7A36810000622F /* MainViewController.swift in Sources */,
 				D0496DBF2B7A36810000622F /* AppDelegate.swift in Sources */,
 				D0496DC12B7A36810000622F /* SceneDelegate.swift in Sources */,
+				D0496DDC2B7AAD2D0000622F /* Model.swift in Sources */,
+				D0496DE82B7B64460000622F /* MainCellViewModel.swift in Sources */,
+				D0496DEB2B7B65160000622F /* Observable.swift in Sources */,
+				D0496DED2B7B85F60000622F /* DetailsMovieViewModel.swift in Sources */,
+				D0496DDF2B7AB8D10000622F /* MainCell.swift in Sources */,
+				D0496DE32B7B597D0000622F /* DetailVC.swift in Sources */,
+				D0496DE62B7B635F0000622F /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +446,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D0496DD42B7A418D0000622F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mabolotska/SnapKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D0496DD52B7A418D0000622F /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0496DD42B7A418D0000622F /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		D0496DD72B7A418D0000622F /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0496DD42B7A418D0000622F /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D0496DB32B7A36810000622F /* Project object */;
 }
