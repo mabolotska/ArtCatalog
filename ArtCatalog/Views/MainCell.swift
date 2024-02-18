@@ -29,7 +29,8 @@ class MainCell: UITableViewCell {
     
     private let imageArtist: UIImageView = {
         let image = UIImageView()
-        image.contentMode = .scaleAspectFit
+        image.contentMode = .scaleAspectFill // Adjust content mode to fill the cell's bounds
+        image.clipsToBounds = true
         return image
     }()
     
@@ -37,7 +38,7 @@ class MainCell: UITableViewCell {
     private let bioLabl: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.minimumScaleFactor = 0.3
+        label.minimumScaleFactor = 0.7
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
@@ -51,8 +52,8 @@ extension MainCell {
         
         imageArtist.snp.makeConstraints { make in
             make.top.leading.bottom.equalToSuperview().inset(10)
-            make.height.equalTo(100)
-            make.width.equalTo(imageArtist.snp.height)
+           make.width.equalTo(150)
+           make.height.equalTo(imageArtist.snp.width)
         }
         
         bioLabl.snp.makeConstraints { make in

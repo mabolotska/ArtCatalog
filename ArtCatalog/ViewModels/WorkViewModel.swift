@@ -6,3 +6,14 @@
 //
 
 import Foundation
+struct WorkViewModel {
+    var title: String?
+    var image: String?
+    var info: String?
+    
+    init(work: Work) {
+        self.title = work.title ?? ""
+        self.image = work.image ?? ""
+        self.info = work.info ?? ""
+    }
+}

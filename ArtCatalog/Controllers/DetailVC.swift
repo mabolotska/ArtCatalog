@@ -10,6 +10,7 @@ import UIKit
 
 class DetailVC: UIViewController {
     var viewModel: DetailsViewModel
+    let scrollView = UIScrollView()
     
     init(viewModel: DetailsViewModel) {
         self.viewModel = viewModel
@@ -54,8 +55,7 @@ class DetailVC: UIViewController {
     
     @objc func dismissFullscreenImage(_ sender: UIButton) {
         sender.superview?.removeFromSuperview()
-            
-            // Show navigation bar and tab bar
+      
             self.navigationController?.isNavigationBarHidden = false
             self.tabBarController?.tabBar.isHidden = false
       
@@ -68,20 +68,7 @@ extension DetailVC {
         view.backgroundColor = .white
         view.addSubview(collectionView)
         
-        //        view.addSubview(nameLabel)
-        //        view.addSubview(pictureImageView)
-        //
-        //        nameLabel.snp.makeConstraints { make in
-        //            make.top.leading.equalToSuperview().offset(50)
-        //        }
-        //
-        //        pictureImageView.snp.makeConstraints { make in
-        //            make.top.equalTo(nameLabel.snp.bottom).offset(20)
-        //            make.width.equalTo(100)
-        //            make.centerX.equalToSuperview()
-        //        }
-        
-        
+    
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
          
@@ -102,55 +89,7 @@ extension DetailVC: UICollectionViewDelegate, UICollectionViewDataSource {
         
                return cell
     }
-
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        guard let cell = collectionView.cellForItem(at: indexPath) as? WorkCell else {
-//                  return
-//              }
-//        
-//        let fullView = UIView()
-//        fullView.backgroundColor = .magenta
-//        fullView.frame = UIScreen.main.bounds
-//        //Create a title
-//       // let title = UILabel.
-//              
-//              // Create the full-screen image view
-//        let newImageView = UIImageView(image: cell.imageView.image)
-//          //    newImageView.frame = UIScreen.main.bounds
-//              newImageView.backgroundColor = .lightGray
-//              newImageView.contentMode = .scaleAspectFit
-//              newImageView.isUserInteractionEnabled = true
-//        newImageView.snp.makeConstraints { make in
-//            make.top.equalToSuperview().offset(10)
-//            make.height.equalTo(200)
-//            make.width.equalTo(200)
-//            make.centerX.equalToSuperview()
-//        }
-//              
-////              // Create a dismiss button
-////              let dismissButton = UIButton(type: .system)
-////              dismissButton.setTitle("< >", for: .normal)
-////              dismissButton.addTarget(self, action: #selector(dismissFullscreenImage), for: .touchUpInside)
-////              dismissButton.translatesAutoresizingMaskIntoConstraints = false
-////              newImageView.addSubview(dismissButton) // Add dismiss button to newImageView
-////              
-////              // Set dismiss button constraints
-////              NSLayoutConstraint.activate([
-////                  dismissButton.topAnchor.constraint(equalTo: newImageView.safeAreaLayoutGuide.topAnchor, constant: 20),
-////                  dismissButton.leadingAnchor.constraint(equalTo: newImageView.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-////                  dismissButton.widthAnchor.constraint(equalToConstant: 80),
-////                  dismissButton.heightAnchor.constraint(equalToConstant: 40)
-////              ])
-//              
-//              // Add the full-screen image view to the view hierarchy
-//              self.view.addSubview(fullView)
-//        fullView.addSubview(newImageView)
-//              
-//              // Hide navigation bar and tab bar
-//              self.navigationController?.isNavigationBarHidden = true
-//              self.tabBarController?.tabBar.isHidden = true
-//    }
-//    
+ 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? WorkCell else {
@@ -158,39 +97,72 @@ extension DetailVC: UICollectionViewDelegate, UICollectionViewDataSource {
         }
         
         let fullView = UIView()
-        fullView.backgroundColor = .magenta
         fullView.frame = UIScreen.main.bounds
+        fullView.backgroundColor = .white
         self.view.addSubview(fullView)
         
         let title = UILabel()
         title.text = cell.titleLabel.text
         fullView.addSubview(title)
         
+        scrollView.backgroundColor = .clear
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
+        fullView.addSubview(scrollView)
+        
         let newImageView = UIImageView(image: cell.imageView.image)
         newImageView.backgroundColor = .lightGray
-        newImageView.contentMode = .scaleAspectFit
+        newImageView.contentMode = .scaleAspectFill
         newImageView.isUserInteractionEnabled = true
-        fullView.addSubview(newImageView)
+        scrollView.addSubview(newImageView)
+        
+        let descriptionLabel = UILabel()
+        descriptionLabel.text = cell.descriptionLabel.text
+        descriptionLabel.numberOfLines = 0
+        fullView.addSubview(descriptionLabel)
+        
+        let dismissButton = UIButton(type: .system)
+        dismissButton.setTitle("< >", for: .normal)
+        dismissButton.addTarget(self, action: #selector(dismissFullscreenImage), for: .touchUpInside)
+        dismissButton.translatesAutoresizingMaskIntoConstraints = false
+        fullView.addSubview(dismissButton)
         
         title.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(100)
             make.centerX.equalToSuperview()
         }
         
-        newImageView.snp.makeConstraints { make in
+        scrollView.snp.makeConstraints { make in
             make.top.equalTo(title.snp.bottom).offset(20)
             make.centerX.equalToSuperview()
-            make.height.equalTo(200)
-            make.width.equalTo(200)
+           make.width.equalTo(view.snp.width).offset(-40)
+            
+            make.height.equalTo(scrollView.snp.width)
+            make.bottom.equalTo(descriptionLabel.snp.top).offset(-20)
         }
         
-        // Aspect ratio constraint
         newImageView.snp.makeConstraints { make in
-            make.width.equalTo(newImageView.snp.height).multipliedBy(0.75)
+            make.edges.equalToSuperview()
+            make.height.equalTo(200)
+    //        make.height.equalTo(newImageView.snp.width).multipliedBy(0.75)
         }
         
-        // Hide navigation bar and tab bar
+       
+        descriptionLabel.snp.makeConstraints { make in
+            make.top.equalTo(newImageView.snp.bottom).offset(10)
+            make.leading.trailing.equalToSuperview().inset(5)
+            make.bottom.lessThanOrEqualTo(dismissButton.snp.top).offset(-10)
+        }
+        
+        dismissButton.snp.makeConstraints { make in
+            make.bottom.trailing.equalToSuperview().offset(-50)
+        }
+
         self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = true
     }
+    
+ 
+
+
 }
