@@ -33,8 +33,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
-     
-
         viewModel.readJSONFile { [weak self] in
                    self?.tableView.reloadData()
                }
